@@ -34,16 +34,15 @@ mc.player.setPos(player_x + 8, player_y + 3, player_z + 12)
 
 while True:
     new_x, new_y, new_z = mc.player.getTilePos()
-	block_below = mc.getBlock(new_x, new_y - 1, new_z)
+    block_below = mc.getBlock(new_x, new_y - 1, new_z)
     if block_below != 44 and block_below != 49:
         block_below = mc.getBlock(new_x, new_y, new_z)
-	relative_position = player_x - new_x
-	white_notes = [60, 62, 64, 65, 67, 69, 71]
-    black_notes = [61, 63, 0,  66, 68, 70]
-	if block_below == 44:
-        notes_along = relative_position // -3
-        play_note(white_notes[notes_along])
-	 if block_below == 49:
-        notes_along = ((relative_position - 1) // -3) - 1 
-        play_note(black_notes[notes_along])
-	
+		relative_position = player_x - new_x
+		white_notes = [60, 62, 64, 65, 67, 69, 71]
+        black_notes = [61, 63, 0,  66, 68, 70]
+		if block_below == 44:
+			notes_along = relative_position // -3
+			play_note(white_notes[notes_along])
+		if block_below == 49:
+			notes_along = ((relative_position - 1) // -3) - 1 
+			play_note(black_notes[notes_along])
